@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  akr-fe:
+    image: inaai-fe:latest
+    build:
+      context: .
+      args:
+        VITE_API_BASE_URL: "http://10.160.233.45:4002/api/v1"
+    ports:
+      - "4001:5000"
+    networks:
+      - inaai-network
+    environment:
+      - DATABASE_URL="postgres://fdbck_ina_ai:4fXLDO1l0hlpiSG@192.168.192.205:5432/dwh"
+    restart: always
+
+networks:
+  inaai-network:
+    driver: bridge
