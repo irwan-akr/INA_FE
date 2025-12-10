@@ -6,7 +6,7 @@ services:
     build:
       context: .
       args:
-        VITE_API_BASE_URL: "http://10.160.233.45:4002/api/v1"
+        VITE_API_BASE_URL: "http://192.168.192.88:4002/api/v1"
     ports:
       - "4001:5000"
     networks:
